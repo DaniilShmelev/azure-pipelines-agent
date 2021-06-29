@@ -1,6 +1,10 @@
 pool: Windows
 
 steps:
+- task: NuGetRestore@1
+  inputs:
+    solution: '**/*.sln'
+    selectOrConfig: 'select'
 - task: MSBuild@1
   inputs:
     solution: '**/*.sln'
